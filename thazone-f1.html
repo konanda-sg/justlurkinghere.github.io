@@ -71,29 +71,7 @@ document.oncontextmenu = function(){return false}
                             }
                         </style>
 <div class="w3-main w3-content w3-padding" style="max-width:1300px;margin-top:100px">
-<script type="text/javascript">
-         function getParameterByName(name) {
-             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                 results = regex.exec(location.search);
-             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-         }
-          id = getParameterByName('p');
-         if(getParameterByName('embed')){
-            embed = getParameterByName('embed');
-         }else{
-            if(getParameterByName('r')){
-                embed = getParameterByName('r');
-             }else{
-                embed = false;
-         }  
-         }
-
-      </script> 
-<script data-cfasync="false" src="//asccdn.com/script/ippg.js" data-adel="inpage" zid="6178914" rr="0" mads="2"></script>
-<div class="embed-responsive embed-responsive-16by9" style="Width: 100%; margin: auto; box-shadow: 2px 2px 8px 2px #2c2c2c; ">
-<script type="text/javascript">
-                    if (embed) {document.write('<script>
+<script>
 var playerInstance=jwplayer("player");
 playerInstance.setup({
 
@@ -117,7 +95,34 @@ playerInstance.setup({
 });
 
 
-</script>')}
+</script>
+<script data-cfasync="false" src="//asccdn.com/script/ippg.js" data-adel="inpage" zid="6178914" rr="0" mads="2"></script>
+<div class="embed-responsive embed-responsive-16by9" style="Width: 100%; margin: auto; box-shadow: 2px 2px 8px 2px #2c2c2c; ">
+<script>
+var playerInstance=jwplayer("player");
+playerInstance.setup({
+
+    playlist: [{
+
+      "sources": [
+        {
+          "default": false,
+          "type": "dash",
+          "file": "https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-016/stream.mpd",
+          "drm": {
+            "clearkey": {"keyId":"cfb5e2b73bef4f3c878f25ab86a7451f", "key":"0d6712bf2a84edcc93d001a9613f6fec"}
+          },
+          "label": "0"
+        }
+      ]
+    }],
+    autostart: false,
+    cast: {},
+    sharing: {}
+});
+
+
+</script>
                         </script>
 </div>
 

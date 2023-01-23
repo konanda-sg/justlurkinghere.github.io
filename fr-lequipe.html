@@ -51,30 +51,30 @@
 <body>
 <div id="player"></div>
 <script>
-var playerInstance=jwplayer("player");
-playerInstance.setup({
-
-    playlist: [{
-
-      "sources": [
-        {
-          "default": false,
-          "type": "dash",
-          "file": "https://hls-m007.live-lv3.canalplus-cdn.net/live/disk/lequipe-hd/dash-fhddvr/lequipe-hd.mpd",
-          "drm": {
-            "clearkey": {"keyId":"2b3a797331514b2fa9b8caa23a237ba2", "key":"668bb76289cf22f0265428170d095111"}
-          },
-          "label": "0"
-        }
-      ]
-    }],
-    height: '75%',
-    width: '75%',
-    autostart: false,
-    cast: {},
-    sharing: {}
-});
-</script></center>
+        var player = new Clappr.Player({
+        source: 'https://hls-m007.live-lv3.canalplus-cdn.net/live/disk/lequipe-hd/dash-fhddvr/lequipe-hd.mpd',
+        mimeType: 'application/dash+xml',
+        height: '75%',
+        width: '75%',
+        plugins: [DashShakaPlayback, LevelSelector, ChromecastPlugin],
+        chromecast: {
+            appId: '9DFB77C0',
+            contentType: 'video/mp4',
+        },
+        shakaConfiguration: {
+            drm: {
+                clearKeys: {
+                    '2b3a797331514b2fa9b8caa23a237ba2': '668bb76289cf22f0265428170d095111',
+                     '859b66c9e36a4c369f7303ffe06b1488': 'ac1979c2003454be7d931461e78f73fe',
+                     '9185133a21d541779575831b8c9049b4': 'e97119e99acd0c216424a1abd8d9868e',
+                     '0ecc48f887c1456fa634faa4df45199c': '1c32ac4b777af4bb7cbfb69b080e4e15'
+                }
+            },
+        },
+        shakaOnBeforeLoad: function(shaka_player) {},
+        parentId: '#player'
+    });
+    </script></center>
    <!-- Casa flotante -->
     <a href="https://justlurkinghere.github.io/" class="float-home">
       <img src="https://static.thenounproject.com/png/2265577-200.png" alt="Ir a tu sitio">

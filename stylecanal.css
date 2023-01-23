@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url("src/bootstrap/bootstrap.min.css");
-@import url("src/splide/splide.min.css");
 @import url("https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
 body {

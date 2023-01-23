@@ -27,10 +27,10 @@
    <div id="player"></div>
    <script>
    var player = new Clappr.Player({
-           source: 'https://crytonep.herokuapp.com/https://mlaliga-dash-movistarplus.emisiondof6.com/dash/mlaliga.isml/manifest.mpd',
+           source: 'https://mlaliga-dash-movistarplus.emisiondof6.com/dash/mlaliga.isml/manifest.mpd',
            mimeType: 'application/dash+xml',
-           height: '100%',
-           width: '100%',
+           height: '50%',
+           width: '50%',
            plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
            events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
            chromecast: {

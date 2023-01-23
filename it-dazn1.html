@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>THAZONE Italia</title>
+    <title>DAZN 1 Italia</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
       /* Estilo para el fondo */
@@ -16,6 +16,25 @@
         color: black;
         padding: 10px;
       }
+      /* Estilo para la casa flotante */
+      .float-home {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: #F9D342;
+        border-radius: 25px 25px 60px 60px;
+        box-shadow: 2px 2px 10px #666;
+        text-align: center;
+      }
+
+      /* Estilo para la imagen de la casa */
+      .float-home img {
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+      }
       /* Estilo para el reproductor de vídeo */
       #video-player {
         width: 80%;
@@ -25,7 +44,7 @@
     </style>
   </head>
   <body>
-    <h1>THAZONE Italia</h1>
+    <h1>DAZN 1 Italia</h1>
     <center><script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
 </head>
@@ -56,5 +75,9 @@ playerInstance.setup({
     sharing: {}
 });
 </script></center>
+   <!-- Casa flotante -->
+    <a href="https://justlurkinghere.github.io/" class="float-home">
+      <img src="https://static.thenounproject.com/png/2265577-200.png" alt="Ir a tu sitio">
+    </a>
   </body>
 </html>

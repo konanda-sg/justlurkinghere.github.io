@@ -2,19 +2,21 @@
 <html>
   <head>
     <title>EUROSPORT 2</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.eurosport.es/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <style>
       /* Estilo para el fondo */
       body {
-        background-color: #36393f;
-        font-family: 'Roboto Mono', monospace;
+        background-color: #3F4354;
+        font-family: 'Open Sans', sans-serif;
       }
       /* Estilo para el título */
       h1 {
         text-align: center;
-        background-color: #002868;
+        background-color: #004acc;
         color: white;
         padding: 10px;
+        border-radius: 10px;
       }
       /* Estilo para la casa flotante */
       .float-home {
@@ -23,7 +25,7 @@
         right: 20px;
         width: 80px;
         height: 80px;
-        background-color: #F9D342;
+        background-color: white;
         border-radius: 25px 25px 60px 60px;
         box-shadow: 2px 2px 10px #666;
         text-align: center;
@@ -64,7 +66,8 @@ playerInstance.setup({
           "drm": {
             "clearkey": {"keyId":"cfb5e2b73bef4f3c878f25ab86a7451f", "key":"0d6712bf2a84edcc93d001a9613f6fec"}
           },
-          "label": "0"
+          "label": "0",
+          "pictureInPicture": "true"
         }
       ]
     }],

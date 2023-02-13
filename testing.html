@@ -1,69 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Test</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
-    <script src="https://cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-    <style>
-      /* Estilo para el fondo */
-      body {
-        background-color: #36393f;
-        font-family: 'Roboto Mono', monospace;
-      }
-      /* Estilo para el título */
-      h1 {
-        text-align: center;
-        background-color: #ffd700;
-        color: black;
-        padding: 10px;
-      }
-      /* Estilo para la casa flotante */
-      .float-home {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 80px;
-        height: 80px;
-        background-color: #F9D342;
-        border-radius: 25px 25px 60px 60px;
-        box-shadow: 2px 2px 10px #666;
-        text-align: center;
-      }
 
-      /* Estilo para la imagen de la casa */
-      .float-home img {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-      }
-      /* Estilo para el reproductor de vídeo */
-      #video-player {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>DAZN 1 Alemania</h1>
-    <center><body>
-<div id="player"></div>
-<script>
+<html lang="es">
+   <head>
+   <meta name="robots" content="noindex" />
+   <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+   <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+   <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+   <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+   <style> 
+   
+   .player-poster[data-poster] {
+     background-size: cover;
+   }
+   body{
+     margin:0;
+     padding:0;
+   }
+   
+   </style>
+   </head>
+   <div id="player"></div>
+   <script>
    var player = new Clappr.Player({
            source: 'https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-024/stream.mpd',
            mimeType: 'application/dash+xml',
-           height: '75%',
-           width: '75%',
-           autostart: false,
+           height: '100%',
+           width: '100%',
            plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
            events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
            chromecast: {
@@ -86,10 +53,4 @@
            shakaOnBeforeLoad: function (shaka_player) {},
            parentId: '#player'
        });
-   </script></center>
-   <!-- Casa flotante -->
-    <a href="https://justlurkinghere.github.io/" class="float-home">
-      <img src="https://static.thenounproject.com/png/2265577-200.png" alt="Ir a tu sitio">
-    </a>
-  </body>
-</html>
+   </script>

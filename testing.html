@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DAZN 1 Alemania</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    <style>
+      /* Estilo para el fondo */
+      body {
+        background-color: #36393f;
+        font-family: 'Roboto Mono', monospace;
+      }
+      /* Estilo para el título */
+      h1 {
+        text-align: center;
+        background-color: #ffd700;
+        color: black;
+        padding: 10px;
+      }
+      /* Estilo para la casa flotante */
+      .float-home {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: #F9D342;
+        border-radius: 25px 25px 60px 60px;
+        box-shadow: 2px 2px 10px #666;
+        text-align: center;
+      }
+
+      /* Estilo para la imagen de la casa */
+      .float-home img {
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+      }
+      /* Estilo para el reproductor de vídeo */
+      #video-player {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DAZN 1 Alemania</h1>
+    <center><script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+</head>
+<body>
+<div id="player"></div>
+<script>
+   var player = new Clappr.Player({
+           source: 'https://dce-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-024/stream.mpd',
+           mimeType: 'application/dash+xml',
+           height: '75%',
+           width: '75%',
+           autostart: false,
+           plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
+           events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
+           chromecast: {
+               appId: '9DFB77C0',
+               contentType: 'video/mp4',
+           },
+           shakaConfiguration: {
+               drm: {
+               clearKeys: {
+                '4e10006d817658f49834f90f2581f7c5': '593577e3f5dfcae421a283eecfd4e075',
+                    '9b0d9d4ed3b552c4b2986c51df75f329': 'd8d00c5e6c884b3a1660b1446b7e75b5',
+                    'c4b7ec59fa5255c5a76b78b074bcb9ea': '5a3530d04decbebf93592855a7b7fafd',
+                    'cfb5e2b73bef4f3c878f25ab86a7451f': '0d6712bf2a84edcc93d001a9613f6fec',
+                    'd6229ed7c208587583d7b4ef894ad69b': '7825bf1a2e1039aa0dc5e45b5536618e'
+                   }
+                   
+               },
+               preferredAudioLanguage: 'pt-BR',
+           },
+           shakaOnBeforeLoad: function (shaka_player) {},
+           parentId: '#player'
+       });
+   </script></center>
+   <!-- Casa flotante -->
+    <a href="https://justlurkinghere.github.io/" class="float-home">
+      <img src="https://static.thenounproject.com/png/2265577-200.png" alt="Ir a tu sitio">
+    </a>
+  </body>
+</html>

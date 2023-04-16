@@ -1,86 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DAZN 1</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.dazn.com/favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <style>
-      /* Estilo para el fondo */
-      body {
-        background-color: #3F4354;
-        font-family: 'Open Sans', sans-serif;
-      }
-      /* Estilo para el título */
-      h1 {
-        text-align: center;
-        background-color: #F9D342;
-        color: black;
-        padding: 10px;
-        border-radius: 10px;
-      }
-      /* Estilo para la casa flotante */
-      .float-home {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 80px;
-        height: 80px;
-        background-color: #F9D342;
-        border-radius: 25px 25px 60px 60px;
-        box-shadow: 2px 2px 10px #666;
-        text-align: center;
-      }
-
-      /* Estilo para la imagen de la casa */
-      .float-home img {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-      }
-      /* Estilo para el reproductor de vídeo */
-      #video-player {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-      }
-    </style>
+    <title>Reproductor de vídeo</title>
   </head>
   <body>
-    <h1>DAZN 1</h1>
-    <center><script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
-<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
-</head>
-<body>
-<div id="player"></div>
-<script>
-var playerInstance=jwplayer("player");
-playerInstance.setup({
+    <h1>Reproductor de vídeo</h1>
+    <video width="640" height="360" controls>
+      <source src="https://msegdiv-dash-movistarplus.emisiondof6.com/dash/msegdiv.isml/manifest.mpd" type="application/dash+xml">
+      <script>
+        // Información de las llaves de cifrado
+        var keyId = 'V8X3R2ZBSOCJyDeimdQ6Eg';
+        var key = new Uint8Array([164, 116, 109, 101, 73, 99, 77, 70, 108, 74, 54, 105, 75, 111, 71, 68, 49, 77, 101, 117, 103]);
+        var initData = [{ 'keyId': keyId, 'initData': key }];
 
-    playlist: [{
-
-      "sources": [
-        {
-          "default": false,
-          "type": "dash",
-          "file": "https://2segdiv-dash-movistarplus.emisiondof6.com/dash/2segdiv.isml/manifest.mpd",
-          "drm": {
-            "clearkey": {"keyId":"XBrPtfJgQAaiqHPoSqRq1Q", "key":"zRLXETXkU2WuOuE9JGylQA"}
-          },
-          "label": "0",
-          "pictureInPicture": "true"
-        }
-      ]
-    }],
-    height: '75%',
-    width: '75%',
-    autostart: false,
-    cast: {},
-    sharing: {}
-});
-</script></center>
-   <!-- Casa flotante -->
-    <a href="https://justlurkinghere.github.io/" class="float-home">
-      <img src="https://static.thenounproject.com/png/2265577-200.png" alt="Ir a tu sitio">
-    </a>
+        // Configuración del reproductor
+        var video = document.querySelector('video');
+        video.addEventListener('encrypted', function(e) {
+          var encrypted = e.target.querySelector('source');
+          encrypted.setAttribute('keySystem', 'org.w3.clearkey');
+          encrypted.setAttribute('keyId', keyId);
+          encrypted.setAttribute('initData', JSON.stringify(initData));
+        });
+      </script>
+      Tu navegador no soporta el elemento video.
+    </video>
   </body>
 </html>

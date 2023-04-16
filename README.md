@@ -1,1 +1,1 @@
-THAZONE & EUSPORT
+Mi televisión
